@@ -555,6 +555,13 @@
       "/Users/Guest/Desktop/bon-appetizers/app/models/product.rb": [
         1,
         1,
+        1,
+        1,
+        null
+      ],
+      "/Users/Guest/Desktop/bon-appetizers/app/models/review.rb": [
+        1,
+        1,
         null
       ],
       "/Users/Guest/Desktop/bon-appetizers/spec/factories/users.rb": [
@@ -562,6 +569,13 @@
         1,
         null,
         null,
+        null
+      ],
+      "/Users/Guest/Desktop/bon-appetizers/spec/models/review_spec.rb": [
+        1,
+        null,
+        1,
+        2,
         null
       ],
       "/Users/Guest/Desktop/bon-appetizers/spec/models/user_spec.rb": [
@@ -572,6 +586,6 @@
         null
       ]
     },
-    "timestamp": 1487353252
+    "timestamp": 1487353669
   }
 }
