@@ -1,13 +1,4 @@
 <%= render 'layouts/errors', object: @product %>
-
-<% if flash[:success] %>
-  <div class="success">Flash: <%= flash[:success] %></div>
-<% end %>
-
-<% if flash[:warning] %>
-  <div class="warning">Flash: <%= flash[:warning] %></div>
-<% end %>
-
 <%= form_for(@product, multipart: true) do |f| %>
   <div class="field">
     <%= f.label :image %>
