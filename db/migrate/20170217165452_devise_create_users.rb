@@ -43,6 +43,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
   create_table :products do |t|
     t.string :title
     t.string :description
+    t.decimal :price
   end
 
   create_table :reviews do |t|
