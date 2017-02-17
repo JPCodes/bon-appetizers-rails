@@ -2,6 +2,26 @@
 
 <% if @products.any? %>
   <h1 class='text-center'>What we offer.</h1>
+  <div class="row">
+  <% @products.each do |product| %>
+      <div class="col-md-4">
+        <%= image_tag product.image, class: 'center-block' %>
+        <br>
+        <p class="text-center">
+          <%= link_to product.title, product_path(product) %>
+        </p>
+        <p class="text-center">
+          <%= link_to 'Edit Product Listing', edit_product_path(product) %>
+        </p>
+        <p class="text-center">
+          $<%= product.price %>
+        </p>
+        <p class="text-center">
+          <%= truncate(product.description, length: 25) %>
+        </p>
+      </div>
+  <% end %>
+</div>
 <% else %>
   <p>
     No products to display. Check back later.

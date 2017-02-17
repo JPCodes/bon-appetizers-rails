@@ -26,7 +26,16 @@ class ProductsController < ApplicationController
   end
 
   def edit
+  end
 
+  def update
+    if @product.update(product_params)
+      flash.now[:success] = "Product Successfully Edited"
+      redirect_to product_path(@product)
+    else
+      flash.now[:warning] = "Product Not Updated"
+      render :edit
+    end
   end
 
   private
