@@ -9,9 +9,10 @@
 This Rails 5 app is an easy-to-use app that allows users to view the for-sale inventory of Bon Appetizers, a fictional catering business. The Administrator User has the power to create, edit, or delete the inventory items on the site.
 
 ## Heroku
-[View on Heroku](www.google.com)
+[Coming Soon](#)
 
 ## Setup/Installation Requirements
+### Important Note: Running the RSPEC command will delete all images, for cleanliness, except for those in the spec/fixtures/images folder
 
 * _In the Terminal, run:_
 ```
@@ -20,7 +21,6 @@ cd bon-appetizers-rails
 bundle install
 rake db:create
 rake db:migrate
-rake db:seed
 rails server
 ```
 * _Then, in any modern browser, navigate to:_
@@ -28,6 +28,15 @@ rails server
 localhost:3000
 ```
 
+* _Give a user admin powers:_
+  * First, sign up a user in the app running on your server.
+  * Then:
+```
+rails console
+user = User.find(1)
+user.admin = true
+user.save
+```
 ## Support and contact details
 
 _Github: [JPCodes](https://github.com/JPCodes)_
