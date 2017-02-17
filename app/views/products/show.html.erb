@@ -8,3 +8,21 @@
 <p class="text-center">
   <%= @product.description %>
 </p>
+<hr>
+<%= render 'reviews/form' %>
+<hr>
+<% if @product.reviews.any? %>
+  <% @product.reviews.each do |review| %>
+  <p class="text-center">
+    <%= User.find(review.user_id).email %> writes:
+  </p>
+  <p class="text-center">
+    <%= review.content %>
+  </p>
+  <hr>
+  <% end %>
+<% else %>
+<p class="text-center">
+  There are no reviews on this product yet.
+</p>
+<% end %>
