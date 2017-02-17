@@ -30,13 +30,9 @@ localhost:3000
 ```
 
 * _Give a user admin powers:_
-  * First, sign up a user in the app running on your server.
-  * Then:
 ```
 rails console
-user = User.find(1)
-user.admin = true
-user.save
+User.create(email: "admin@site.com", password: "123456", password_confirmation: "123456", admin: true)
 ```
 ## Support and contact details
 
