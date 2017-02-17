@@ -2,12 +2,12 @@ require 'rails_helper'
 
 describe 'the create a product process' do
   before do
-    user = FactoryGirl.create(:user)
-    user.admin = true
-    user.save
+    @user = FactoryGirl.create(:user)
+    @user.admin = true
+    @user.save
     visit new_user_session_path
-    fill_in 'Email', :with => user.email
-    fill_in 'Password', :with => user.password
+    fill_in 'Email', :with => @user.email
+    fill_in 'Password', :with => @user.password
     click_on 'Log in'
   end
 
@@ -21,9 +21,16 @@ describe 'the create a product process' do
     expect(page).to have_content('Chocolate Cake')
   end
 
-  it 'will fail to create a product' do
+  it 'will fail to create a product due to incorrect form response' do
     click_on 'Add a Product'
     click_on 'Submit and Upload'
     expect(page).to have_content('errors')
+  end
+
+  it 'will fail to create a product due to not being admin' do
+    @user.admin = false
+    @user.save
+    click_on 'Add a Product'
+    expect(page).to have_content('You must have administrator privileges to see that page')
   end
 end
