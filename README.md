@@ -13,7 +13,7 @@ This Rails 5 app is an easy-to-use app that allows users to view the for-sale in
 
 ## Setup/Installation Requirements
 #### Important Note: Running the RSPEC command will delete all images, for cleanliness, except for those in the spec/fixtures/images folder
-## Manual Testing Note: spec/fixtures/images folder (mentioned above) contains test photos to use in the app (optional)
+#### Manual Testing Note: spec/fixtures/images folder (mentioned above) contains test photos to use in the app (optional)
 
 * _In the Terminal, run:_
 ```
