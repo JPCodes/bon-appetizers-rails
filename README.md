@@ -12,7 +12,8 @@ This Rails 5 app is an easy-to-use app that allows users to view the for-sale in
 [Coming Soon](#)
 
 ## Setup/Installation Requirements
-### Important Note: Running the RSPEC command will delete all images, for cleanliness, except for those in the spec/fixtures/images folder
+#### Important Note: Running the RSPEC command will delete all images, for cleanliness, except for those in the spec/fixtures/images folder
+## Manual Testing Note: spec/fixtures/images folder (mentioned above) contains test photos to use in the app (optional)
 
 * _In the Terminal, run:_
 ```
@@ -39,8 +40,8 @@ user.save
 ```
 ## Support and contact details
 
-_Github: [JPCodes](https://github.com/JPCodes)_
-_LinkedIn: [Jim Padilla](https://www.linkedin.com/in/jpcodes)_
+* _Github: [JPCodes](https://github.com/JPCodes)_
+* _LinkedIn: [Jim Padilla](https://www.linkedin.com/in/jpcodes)_
 
 ## Technologies Used
 
