@@ -9,8 +9,10 @@
   <%= @product.description %>
 </p>
 <hr>
+<% if user_signed_in? %>
 <%= render 'reviews/form' %>
 <hr>
+<% end %>
 <% if @product.reviews.any? %>
   <% @product.reviews.each do |review| %>
   <p class="text-center">
@@ -20,7 +22,6 @@
     <%= review.content %>
   </p>
   <% if current_user %>
-  <% puts current_user.admin %>
     <% if current_user.id == review.user_id || current_user.admin? %>
       <%= link_to 'Manage Review', edit_product_review_path(@product, review), class: 'btn btn-xs btn-warning' %>
     <% end %>
