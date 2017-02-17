@@ -25,4 +25,11 @@ describe 'the edit a review process' do
     click_on 'Update Review'
     expect(page).to have_content("Review Not Updated")
   end
+
+  it 'will delete a review' do
+    click_on 'Manage Review'
+    fill_in 'Content', :with => ''
+    click_on 'Delete Review'
+    expect(page).to have_content("Successfully Deleted Review")
+  end
 end
