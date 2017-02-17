@@ -10,12 +10,16 @@
         <p class="text-center">
           <%= link_to product.title, product_path(product) %>
         </p>
-        <p class="text-center">
-          <%= link_to 'Edit Product Listing', edit_product_path(product), class: 'btn btn-xs btn-warning' %>
-        </p>
-        <p class="text-center">
-          <%= link_to 'Delete Product Listing', product_path(product), method: :delete, data: {confirm: 'Confirm Deletion?'}, class: 'btn btn-xs btn-danger' %>
-        </p>
+        <% if user_signed_in? %>
+          <% if current_user.admin? %>
+            <p class="text-center">
+              <%= link_to 'Edit Product Listing', edit_product_path(product), class: 'btn btn-xs btn-warning' %>
+            </p>
+            <p class="text-center">
+              <%= link_to 'Delete Product Listing', product_path(product), method: :delete, data: {confirm: 'Confirm Deletion?'}, class: 'btn btn-xs btn-danger' %>
+            </p>
+          <% end %>
+        <% end %>
         <p class="text-center">
           $<%= product.price %>
         </p>

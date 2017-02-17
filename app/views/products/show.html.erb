@@ -20,7 +20,8 @@
     <%= review.content %>
   </p>
   <% if current_user %>
-    <% if current_user.id == review.user_id %>
+  <% puts current_user.admin %>
+    <% if current_user.id == review.user_id || current_user.admin? %>
       <%= link_to 'Manage Review', edit_product_review_path(@product, review), class: 'btn btn-xs btn-warning' %>
     <% end %>
   <% end %>

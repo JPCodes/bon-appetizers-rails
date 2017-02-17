@@ -13,6 +13,12 @@ class ProductsController < ApplicationController
 
   def new
     @product = Product.new
+    if user_signed_in?
+      if !current_user.admin?
+        flash[:warning] = 'You must have administrator privileges to see that page'
+        redirect_to root_path
+      end
+    end
   end
 
   def create
@@ -27,6 +33,12 @@ class ProductsController < ApplicationController
   end
 
   def edit
+    if user_signed_in?
+      if !current_user.admin?
+        flash[:warning] = 'You must have administrator privileges to see that page'
+        redirect_to root_path
+      end
+    end
   end
 
   def update
